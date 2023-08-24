@@ -48,7 +48,7 @@ function Sidebar() {
 		<div
 			className={classNames(
 				"flex flex-col gap-32",
-				"w-60 h-full",
+				"!w-60 h-full",
 				"bg-[#f2f2f2]",
 				"px-8 py-14"
 			)}
