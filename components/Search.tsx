@@ -10,7 +10,7 @@ interface SearchProps {
 	onSearch: (query: string) => void;
 }
 function Search({ value, delay = 1000, placeholder, onSearch }: SearchProps) {
-	const [search, setSearch] = useState<string>(() => value ?? "");
+	const [search, setSearch] = useState<string>(() => value ?? ""); /* if there is no value use empty string */
 	const handleSearch = useCallback(
 		debounce((search) => {
 			onSearch(search);
@@ -42,7 +42,7 @@ function Search({ value, delay = 1000, placeholder, onSearch }: SearchProps) {
 					"outline-none"
 				)}
 				onChange={({
-					currentTarget: { value },
+					currentTarget: { value }, /* destructuring the event to get the current event & destructuring the current event to get the value */
 				}: ChangeEvent<HTMLInputElement>) => {
 					setSearch(value);
 					handleSearch(value);
